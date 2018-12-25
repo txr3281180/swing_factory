@@ -1,0 +1,28 @@
+
+HSpacer             水平间隔
+VSpacer             垂直间隔
+JPanel              面板
+JScrollPanel        滚动面板
+JButton             按钮
+JRadioBution        单选按钮
+JCheckBox           复选框
+JLabel              标签
+JTextField          文本字段
+JPasswordField      密码字段
+JTextArea           文本区域
+JTextPane           文本窗格
+JEditorPane         编辑器窗格中
+JComboBox           组合框
+JTable              表
+JList               列表
+JTabbedPane         选项卡式窗格
+JSplitPane          分隔面板
+JSpinner            微调控制项
+JSlider             滑块
+JSeparator          分隔符
+JProgressBar        进度条
+JScrollBar          滚动条
+JToolBar            工具栏
+JToolBar.Separator  工具栏分隔符
+
+Palette             调色板

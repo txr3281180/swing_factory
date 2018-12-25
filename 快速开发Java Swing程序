@@ -1,0 +1,45 @@
+maven的配置
+-------------------------------------------------------
+对于Maven，为了使用Intellj的窗口布局，需要引入依赖，依赖为：
+ <dependencies>
+   <dependency>
+     <groupId>com.intellij</groupId>
+     <artifactId>javac2</artifactId>
+     <version>7.0.3</version>
+   </dependency>
+ </dependencies>
+
+-------------------------------------------------------
+
+同时，为了能够通过maven打包一个可自行jar，需要配置为：
+ <build>
+   <plugins>
+     <plugin>
+       <artifactId>maven-assembly-plugin</artifactId>
+       <version>2.2</version>
+       <configuration>
+         <archive>
+           <manifest>
+             <mainClass>com.sumscope.mbvaluator.PublisherDialog</mainClass>
+           </manifest>
+         </archive>
+         <descriptorRefs>
+           <descriptorRef>
+             jar-with-dependencies
+           </descriptorRef>
+         </descriptorRefs>
+       </configuration>
+     </plugin>
+   </plugins>
+ </build>
+
+-------------------------------------------------------
+
+使用以上配置后，可以使用 mvn assembly:assembly 命令打包。生成的带“jar-with-dependencies”后缀的jar包既是可执行的jar文件。
+
+使用Intellij的GUI Form快速开发界面
+    在Intellij中，邮件菜单 new --> GUI Form 新建一个Swing窗口。
+    该窗口对象包含两个文件，一个Java类文件，一个Form文件。
+    双击Form文件可以打开可视化界面设计窗口进行窗口的设计。 注意，由于我们使用mvn最后进行项目的打包，因此必须将GUI form配置为生成Java source code 模式。
+    既在settings --> GUI Designer界面选择 Generate GUI into : Java source code 模式。
+    选择该模式后，按ctrl+F9你将发现界面相关的代码自动生成在Java类中
